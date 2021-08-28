@@ -19,3 +19,4 @@ Client.py is the uploader handler.<br>You can use that uploader handler to be an
 Download Client.py and run it
 # For developer who want storage
 You can access it by go to https://content.biomoopng.tk/save and send POST http request by it require extension header to be `.<extension>` and body of response is encrypted base64 data
+###### y e s
