@@ -3,6 +3,7 @@ WORKDIR /app
 COPY **
 COPY *.*
 COPY *.*
-RUN pip install -r requirements.txt
+RUN pip install -r flask
+RUN mkdir stuff
 EXPOSE 80
 CMD ["python","main.py"]
