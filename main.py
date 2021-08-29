@@ -15,8 +15,9 @@ def index():
 	return is random string bitch<br>
 	upload anything you want<br>
 	don\'t fucking expect server to open your bitchass file
-	<a href=\"/downloadclient\">client download my client side content uploader y e s</a>
-	
+	<a href=\"/downloadclient\">client download my client side content uploader</a>
+	<br>no violent or porn upload to server plz
+	<br> this is alternative storage plz don't put such a heavy file
 	"""
 @app.route('/save',methods=['POST'])
 def save():
@@ -32,7 +33,8 @@ def client():
 @app.route('/<pic>')
 def get(pic):
 	try:
-		a = flask.send_file("stuff/" + pic)
+		print(flask.request.args.get("preview"))
+		a = flask.send_file("stuff/" + pic,as_attachment=True if flask.request.args.get("preview") is not None or flask.request.args.get("preview") == "false" else False)
 	except Exception as e:
 		return str(e)
 	else:
