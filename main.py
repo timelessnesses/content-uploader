@@ -18,7 +18,7 @@ def index():
 	<a href=\"/downloadclient\">client download my client side content uploader y e s</a>
 	
 	"""
-@app.route('/save',methods=['POST',"GET"])
+@app.route('/save',methods=['POST'])
 def save():
 	image = b64decode(flask.request.data)
 	string = ''.join(sample(ascii_letters+digits,10)) + flask.request.headers.get("extension")
