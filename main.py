@@ -53,7 +53,7 @@ def get(pic):
 		a = flask.send_file("stuff/" + pic,as_attachment=True if flask.request.args.get("preview") is not None or flask.request.args.get("preview") == "false" else False)
 		write(flask.request.environ["REMOTE_ADDR"],f"GET {pic} FILE ")
 	except Exception as e:
-		return str(e)
+		return "No files found you idiot"
 	else:
 		return a
 @app.route('/favicon.ico')
