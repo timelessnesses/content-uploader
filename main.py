@@ -34,12 +34,12 @@ def index():
 	write(flask.request.remote_addr,"GET index.html")
 @app.route('/save',methods=['POST'])
 def save():
-	image = b64decode(flask.request.data)
+	image = flask.request.data
 	string = ''.join(sample(ascii_letters+digits,10)) + flask.request.headers.get("extension")
 	a = open("stuff/" + string,"wb")
 	a.write(image)
 	a.close()
-	write(flask.request.remote_addr,f"POST {string}")
+	write(flask.request.environ["REMOTE_ADDR"],f"POST {string}")
 	return string ,202
 @app.route('/downloadclient',methods=['GET'])
 def client():
@@ -50,7 +50,7 @@ def get(pic):
 	try:
 		print(flask.request.args.get("preview"))
 		a = flask.send_file("stuff/" + pic,as_attachment=True if flask.request.args.get("preview") is not None or flask.request.args.get("preview") == "false" else False)
-		write(flask.request.remote_addr,f"GET {pic} FILE ")
+		write(flask.request.environ["REMOTE_ADDR"],f"GET {pic} FILE ")
 	except Exception as e:
 		return str(e)
 	else:
