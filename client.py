@@ -15,8 +15,8 @@ class ProgressUpload:
         self.chunk_size = chunk_size
         self.file_size = os.path.getsize(filename)
         self.size_read = 0
-        self.divisor = min(math.floor(math.log(self.file_size, 1000)) * 3, 12)  # cap unit at a GB
-        self.unit = {0: 'B', 3: 'KB', 6: 'MB', 9: 'GB', }[self.divisor]
+        self.divisor = min(math.floor(math.log(self.file_size, 1000)) * 3, 9)  # cap unit at a GB
+        self.unit = {0: 'B', 3: 'KB', 6: 'MB', 9: 'GB'}[self.divisor]
         self.divisor = 10 ** self.divisor;self.text = desiredtext
 
 
@@ -42,11 +42,11 @@ while True:
 	if "s" in a or "S" in a:
 		screen = ImageGrab.grabclipboard()
 		screen.save("pic.jpg")
+		screen = screen.convert("RGB")
 		print("Your screenshot is at https://content.biomooping.tk/" + post("https://content.biomooping.tk/save",data=ProgressUpload("pic.jpg","your screenshot"),headers={"extension":splitext("./pic.jpg",)[1]}).text)
 		remove("pic.jpg")
 	elif "f" in a or "F" in a:
 		path = input("Your file path\n")
-
 		filename,ext = splitext(path)
 		print("Your file is at is at https://content.biomooping.tk/" + post("https://content.biomooping.tk/save",data=ProgressUpload(path,filename),headers={"extension":ext}).text)
 	elif a.startswith("ct") or a.startswith("CT"):
