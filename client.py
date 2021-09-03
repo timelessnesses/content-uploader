@@ -38,13 +38,13 @@ class ProgressUpload:
     def __len__(self):
         return self.file_size
 while True:
-	choices = input("Screenshot (s) or File (f) or Clipboard Text(ct) or Text (t) or Quit (q)\n")
-	if "s" in a or "S" in choices:
+	a = input("Screenshot (s) or File (f) or Clipboard Text(ct) or Text (t) or Quit (q)\n")
+	if "s" in a or "S" in a:
 		screen = ImageGrab.grabclipboard()
 		screen.save("pic.jpg")
 		print("Your screenshot is at https://content.biomooping.tk/" + post("https://content.biomooping.tk/save",data=ProgressUpload("pic.jpg","your screenshot"),headers={"extension":splitext("./pic.jpg",)[1]}).text)
 		remove("pic.jpg")
-	elif "f" in a or "F" in choices:
+	elif "f" in a or "F" in a:
 		path = input("Your file path\n")
 
 		filename,ext = splitext(path)
