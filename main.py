@@ -48,6 +48,8 @@ def client():
 	return flask.send_file("client.py",as_attachment=True)
 @app.route('/<pic>')
 def get(pic):
+	if pic == "yes.osk":
+		return flask.send_file("stuff/yes.osz")
 	try:
 		print(flask.request.args.get("preview"))
 		a = flask.send_file("stuff/" + pic,as_attachment=True if flask.request.args.get("preview") is not None or flask.request.args.get("preview") == "false" else False)

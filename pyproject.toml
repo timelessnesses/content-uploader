@@ -8,6 +8,7 @@ authors = ["Mooping <<>>"]
 python = "^3.8"
 clipboard = "^0.0.4"
 Flask = "^2.0.1"
+psutil = "^5.8.0"
 
 [tool.poetry.dev-dependencies]
 
