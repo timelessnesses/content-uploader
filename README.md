@@ -18,5 +18,5 @@ Client.py is the uploader handler.<br>You can use that uploader handler to be an
 # but I am here cuz I want storage!
 Download Client.py and run it
 # For developer who want storage
-You can access it by go to https://content.biomoopng.tk/save and send POST http request by it require extension header to be `.<extension>` and body of response is RAW
+Download client at here for example usage https://content.biomooping.tk/client.py
 ###### y e s
