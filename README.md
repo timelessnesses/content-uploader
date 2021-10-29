@@ -18,5 +18,5 @@ Client.py is the uploader handler.<br>You can use that uploader handler to be an
 # but I am here cuz I want storage!
 Download Client.py and run it
 # For developer who want storage
-Download client at here for example usage https://content.biomooping.tk/client.py
+Download client at here for example usage 
 ###### y e s
