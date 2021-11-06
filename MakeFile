@@ -9,3 +9,5 @@ client:
 
 storage:
 	python3 yea.py
+docker:
+	docker run . -p 80:80
