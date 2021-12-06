@@ -13,10 +13,3 @@ Edit the line that something like this
 ```py
 app.run("0.0.0.0",port=80) # Edit that port number
 ```
-## What is client.py?
-Client.py is the uploader handler.<br>You can use that uploader handler to be anything you want!
-# but I am here cuz I want storage!
-Download Client.py and run it
-# For developer who want storage
-Download client at here for example usage 
-###### y e s
